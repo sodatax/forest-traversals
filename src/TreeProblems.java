@@ -87,7 +87,15 @@ public class TreeProblems {
    A null tree should return 0
   */
   public static int sumTree(Node<Integer> root) {
-    return -1;
+    if(root==null) return 0;
+
+    int total = root.value;
+
+    for(Node<Integer> child : root.children){
+      total += sumTree(child);
+    }
+    
+    return total;
   }
 
   /*
